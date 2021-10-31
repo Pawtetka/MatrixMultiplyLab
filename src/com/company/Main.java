@@ -11,8 +11,8 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        runTestWithMatrix(1000, false);
-        runBigTest();
+        runTestWithMatrix(3000, false);
+        //runBigTest();
     }
 
     private static void runTestWithMatrix(int size, boolean printMatrices){
@@ -21,11 +21,11 @@ public class Main {
         Matrix matrix1 = new Matrix(size, true);
         Matrix matrix2 = new Matrix(size, true);
 
-        IMultiplier serialMultiplier = new SerialMultiplier();
-        IMultiplier stripedMultiplier = new StripedMultiplier(12);
+        //IMultiplier serialMultiplier = new SerialMultiplier();
+        //IMultiplier stripedMultiplier = new StripedMultiplier(12);
         IMultiplier foxMultiplier = new FoxMultiplier(12);
 
-        long currentTime = System.nanoTime();
+        /*long currentTime = System.nanoTime();
         Matrix resultMatrix = serialMultiplier.multiplyMatrices(matrix1, matrix2);
         long timeResult = System.nanoTime() - currentTime;
         System.out.printf("Time for serial: %d ms\n", timeResult / 1_000_000);
@@ -33,11 +33,11 @@ public class Main {
         currentTime = System.nanoTime();
         resultMatrix = stripedMultiplier.multiplyMatrices(matrix1, matrix2);
         timeResult = System.nanoTime() - currentTime;
-        System.out.printf("Time for striped: %d ms\n", timeResult / 1_000_000);
+        System.out.printf("Time for striped: %d ms\n", timeResult / 1_000_000);*/
 
-        currentTime = System.nanoTime();
-        resultMatrix = foxMultiplier.multiplyMatrices(matrix1, matrix2);
-        timeResult = System.nanoTime() - currentTime;
+        long currentTime = System.nanoTime();
+        Matrix resultMatrix = foxMultiplier.multiplyMatrices(matrix1, matrix2);
+        long timeResult = System.nanoTime() - currentTime;
         System.out.printf("Time for fox: %d ms\n", timeResult / 1_000_000);
 
         if(printMatrices){
