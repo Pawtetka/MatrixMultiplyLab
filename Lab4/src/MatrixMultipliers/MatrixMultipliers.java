@@ -8,7 +8,7 @@ public class MatrixMultipliers {
     }
 
     public static void simpleRun(boolean printMatrices) {
-        int size = 3000;
+        int size = 2500;
 
         Matrix first = new Matrix(size, true);
         Matrix second = new Matrix(size, true);
@@ -24,6 +24,6 @@ public class MatrixMultipliers {
 
         System.out.println("Time for Fox Algorithm: " + currTimeFox / 1_000_000);
         System.out.println();
-        System.out.println("SpeedUp (timeFox / timeFoxForkJoin): " + (double) 8306 / (currTimeFox / 1_000_000));
+        System.out.println("SpeedUp (timeFox / timeFoxForkJoin): " + (double) 8921 / (currTimeFox / 1_000_000));
     }
 }
